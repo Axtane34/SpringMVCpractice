@@ -1,11 +1,15 @@
 package ru.axtane.springMVC.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import ru.axtane.springMVC.models.Person;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -40,5 +44,53 @@ public class PersonDAO {
 
     public void delete(int id){
         jdbcTemplate.update("DELETE FROM Person WHERE id=?", id);
+    }
+
+    /////////////////////////////////
+    //////Testing batch update
+    ////////////////////////////////
+
+    public void testMultipleUpdate(){
+        List<Person> list = create1000People();
+        long before = System.currentTimeMillis();
+
+        for (Person person : list){
+            jdbcTemplate.update("INSERT INTO Person VALUES(?, ?, ?, ?)",
+                    person.getId(), person.getName(), person.getAge(), person.getEmail());
+        }
+
+        long after = System.currentTimeMillis();
+        System.out.println("Time: " + (after-before));
+    }
+
+    public void testBatchUpdate(){
+        List<Person> list = create1000People();
+        long before = System.currentTimeMillis();
+
+            jdbcTemplate.batchUpdate("INSERT INTO Person VALUES(?, ?, ?, ?)", new BatchPreparedStatementSetter() {
+                @Override
+                public void setValues(PreparedStatement ps, int i) throws SQLException {
+                    ps.setInt(1, list.get(i).getId());
+                    ps.setString(2, list.get(i).getName());
+                    ps.setInt(3, list.get(i).getAge());
+                    ps.setString(4, list.get(i).getEmail());
+                }
+
+                @Override
+                public int getBatchSize() {
+                    return list.size();
+                }
+            });
+
+        long after = System.currentTimeMillis();
+        System.out.println("Time: " + (after-before));
+    }
+
+    public List<Person> create1000People(){
+        List<Person> list = new ArrayList<>();
+        for (int i = 0; i < 1000; i++) {
+            list.add(new Person(i, "Name" + i, 30, "test" + i + "@mail.ru"));
+        }
+        return list;
     }
 }
