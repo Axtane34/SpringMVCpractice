@@ -40,13 +40,13 @@ public class PersonDAO {
     }
 
     public void save(Person person){
-       jdbcTemplate.update("INSERT INTO Person(name, age, email) VALUES(?, ?, ?)",
-               person.getName(), person.getAge(), person.getEmail());
+       jdbcTemplate.update("INSERT INTO Person(name, age, email, address) VALUES(?, ?, ?, ?)",
+               person.getName(), person.getAge(), person.getEmail(), person.getAddress());
     }
 
     public void update(int id, Person updatedPerson){
-        jdbcTemplate.update("UPDATE Person SET name=?, age=?, email=? WHERE id=?",
-                updatedPerson.getName(), updatedPerson.getAge(), updatedPerson.getEmail(), id);
+        jdbcTemplate.update("UPDATE Person SET name=?, age=?, email=?, address=? WHERE id=?",
+                updatedPerson.getName(), updatedPerson.getAge(), updatedPerson.getEmail(), updatedPerson.getAddress(), id);
     }
 
     public void delete(int id){
@@ -96,7 +96,7 @@ public class PersonDAO {
     public List<Person> create1000People(){
         List<Person> list = new ArrayList<>();
         for (int i = 0; i < 1000; i++) {
-            list.add(new Person(i, "Name" + i, 30, "test" + i + "@mail.ru"));
+            list.add(new Person(i, "Name" + i, 30, "test" + i + "@mail.ru", "some address"));
         }
         return list;
     }

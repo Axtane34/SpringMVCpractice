@@ -1,9 +1,6 @@
 package ru.axtane.springMVC.models;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 public class Person {
     private int id;
@@ -11,17 +8,24 @@ public class Person {
     @NotEmpty(message = "Name shouldn't be empty")
     @Size(min = 2, max = 30, message = "Name should be between 2 and 30 characters")
     private String name;
+
     @Min(value = 0, message = "Age cant be negative number")
     private int age;
+
     @NotEmpty(message = "Email shouldn't be empty")
     @Email(message = "Email should be valid")
     private String email;
 
-    public Person(int id, String name, int age, String email) {
+    //Страна, Город, Индекс (6цифр)
+    @Pattern(regexp = "[A-Z][a-z]+, [A-Z][a-z]+, \\d{6}", message = "Your address should be in this format: Country, City, Postal Code (6 digits")
+    private String address;
+
+    public Person(int id, String name, int age, String email, String address) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.email = email;
+        this.address = address;
     }
 
     public Person(){}
@@ -56,5 +60,13 @@ public class Person {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
