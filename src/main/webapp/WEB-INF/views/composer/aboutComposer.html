@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/aboutComposer.css}"/>
+    <title>Document</title>
+</head>
+<body>
+    <div class="bg">
+        <div class="header">
+            <div class="content cHeader"></div>
+        </div>
+        <div class="main">
+            <div class="content cMain">
+                <div class="left">
+                    <div class="l1"><p th:text="${composer.getName()}"></p></div>
+                    <div class="l2"><p th:text="${composer.getEpoch()}"></p></div>
+                    <div class="l3"><p th:text="${composer.getDateOfBirth()}"></p></div>
+                    <div class="base">
+                        <div class="circle cStart"></div>
+                        <div class="line"></div>
+                        <div class="circle"></div>
+                        <div class="line"></div>
+                        <div class="circle"></div>
+                        <div class="circle cDropLeft"></div>
+                        <div class="line"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="l4"><p th:text="${composer.getBirthPlace()}"></p></div>
+                    <div class="l5"><p th:text="${composer.getActivityYears()}"></p></div>
+                    <div class="l6"><p th:text="${composer.getDateOfDeath()}"></p></div>
+                    <div class="l7"><p th:text="${composer.getBurialPlace()}"></p></div>
+                </div>
+                <div class="center">
+                    <div class="c1">фото, пока не работает</div>
+                    <div class="c2"><p th:text="${composer.getComposerQuote()}"></p></div>
+                    <div class="c3">автограф, пока не работает</div>
+                    <div class="c4"><p>ТВОРЧЕСТВО</p></div>
+                </div>
+                <div class="right">
+                    <div class="base">
+                        <div class="circle"></div>
+                        <div class="line"></div>
+                        <div class="circle cDropRight"></div>
+                        <div class="line"></div>
+                        <div class="circle"></div>
+                        <div class="line"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="r1"><p th:text="${composer.getBiography()}"></p></div>
+                    <div class="r2"><p th:text="${composer.getEnvironment()}"></p></div>
+                    <div class="r3"><p th:text="${composer.getFacts()}"></p></div>
+                    <div class="r4"><p th:text="${composer.getMistake()}"></p></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="content"></div>
+        </div>
+    </div>
+</body>
+</html>

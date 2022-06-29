@@ -1,0 +1,72 @@
+<html lang="ru" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Новый композитор</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}"/>
+</head>
+<body>
+<form class="container" th:method="POST" th:action="@{/composer}" th:object="${composer}">
+    <div class="name">
+        ФИО
+        <input type="text" th:field="*{name}">
+    </div>
+    <div class="epoch">
+        эпоха
+        <input type="text" th:field="*{epoch}">
+    </div>
+    <div class="dateOfBirth">
+        когда родился
+        <input type="date" th:field="*{dateOfBirth}">
+    </div>
+    <div class="birthPlace">
+        где родился
+        <input type="text" th:field="*{birthPlace}">
+    </div>
+    <div class="activityYears">
+        годы активности
+        <input type="text" th:field="*{activityYears}">
+    </div>
+    <div class="dateOfDeath">
+        дата смерти
+        <input type="text" th:field="*{dateOfDeath}">
+    </div>
+    <div class="burialPlace">
+        место захоронения
+        <input type="text" th:field="*{burialPlace}">
+    </div>
+    <div class="photo">
+        фотокарточка *pic (ПОКА НЕ РАБОТАЕТ)
+        <input value ="не трогать" type="text" th:field="*{photo}">
+    </div>
+    <div class="composerQuote">
+        цитата
+        <input type="text" th:field="*{composerQuote}">
+    </div>
+    <div class="autograph">
+        автография*pic (ПОКА НЕ РАБОТАЕТ)
+        <input value ="не трогать" type="text" th:field="*{autograph}">
+    </div>
+    <div class="biography">
+        биография
+        <input type="text" th:field="*{biography}">
+    </div>
+    <div class="environment">
+        окружение
+        <input type="text" th:field="*{environment}">
+    </div>
+    <div class="facts">
+        факты
+        <input type="text" th:field="*{facts}">
+    </div>
+    <div class="mistake">
+        заблуждения
+        <input type="text" th:field="*{mistake}">
+    </div>
+    <input type="submit" value="ДОБАВИТЬ">
+
+
+
+</form>
+<script th:src="@{/assets/css/main.js}"></script>
+</body>
+</html>

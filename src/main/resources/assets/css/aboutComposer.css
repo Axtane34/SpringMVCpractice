@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.bg{
+    width: 100vw;
+    height: 100vh;
+}
+.header{
+    height: 195px;
+    width: 100%;
+    background-color: black;
+}
+
+
+.content{
+    width: 1226px;
+    height: 100%;
+
+    margin: 0 auto;
+}
+.cHeader{
+    background-image: url('img/bg.png');
+    background-size: 100%, 100%;
+}
+
+.cMain{
+    padding-top: 68px;
+
+}
+
+.left{
+
+    float: left;
+    height: 100%;
+    width: 342px;
+}
+
+.l1{
+    float: right;
+    border: 1px dotted rgb(44, 44, 44);
+    width: 100%;
+    height: 141px;
+}
+
+.l2{
+    float: right;
+    border: 1px dotted rgb(44, 44, 44);
+    width: 100%;
+    height: 23px;
+}
+
+.base{   
+    float: left;
+    width: 24px;
+    height: 600px;
+}
+
+
+.circle{
+    width: 15px;
+    height: 15px;
+    border: 2px solid #930000;
+    border-radius: 50%;
+}
+
+.cStart{
+    margin-top: 66px;
+}
+
+.cDropRight{
+    margin-top: 361px;
+}
+
+.cDropLeft{
+    margin-top: 72px;
+}
+
+.line{
+    width: 0px;
+    height: 73px;
+    border: 2px solid #000000;
+    margin-left: 6px;
+}
+
+.l3{
+    float: right;
+    margin-top: 66px;
+    border: 1px dotted rgb(44, 44, 44);
+    width: 318px;
+    height: 45px;
+}
+
+.l4{
+    float: right;
+    margin-top: 42px;
+    border: 1px dotted rgb(44, 44, 44);
+    width: 318px;
+    height: 67px;
+}
+.l5{
+    float: right;
+    margin-top: 20px;
+    border: 1px dotted rgb(44, 44, 44);
+    width: 318px;
+    height: 45px;
+}
+.l6{
+    float: right;
+    margin-top: 42px;
+    border: 1px dotted rgb(44, 44, 44);
+    width: 318px;
+    height: 67px;
+}
+.l7{
+    float: right;
+    margin-top: 20px;
+    border: 1px dotted rgb(44, 44, 44);
+    width: 318px;
+    height: 89px;
+}
+.right{
+
+    float: right;
+    height: 100%;
+    width: 342px;
+}
+.r1{
+    float: right;
+    border: 1px dotted rgb(44, 44, 44);
+    width: 318px;
+    height: 441px; 
+}
+.r2{
+    margin-top: 8px;
+    float: right;
+    border: 1px dotted rgb(44, 44, 44);
+    width: 318px;
+    height: 67px;  
+}
+.r3{
+    margin-top: 18px;
+    float: right;
+    border: 1px dotted rgb(44, 44, 44);
+    width: 318px;
+    height: 67px;  
+}
+.r4{
+    margin-top: 19px;
+    float: right;
+    border: 1px dotted rgb(44, 44, 44);
+    width: 318px;
+    height: 89px;  
+}
+
+.center{
+
+    float: left;
+    height: 100%;
+    width: 542px
+}
+
+
+
+.c1{
+
+    width: 384px;
+    height: 384px;
+    margin: 0 auto;
+    background-image: url('img/port.png');
+    background-size: 100%,100%;
+}
+.c2{
+    border: 1px dotted rgb(44, 44, 44); 
+    width: 342px;
+    height: 133px;
+    margin: 33px auto 0 auto;
+}
+.c3{
+    border: 1px dotted rgb(44, 44, 44); 
+    width: 342px;
+    height: 82px;
+    margin: 25px auto 0 auto;
+}
+.c4{
+    cursor: pointer;
+    border: 2px solid #930000;
+    border-radius: 16px;
+    width: 315px;
+    height: 31px;
+    margin: 21px auto 0 auto;
+}
+
+.c4 p{
+    user-select: none;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #930000;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+
+.main{
+    height: 880px;
+    width: 100%;
+    background-image: url('img/bg2.jpg');
+    background-size: 100%,100%;
+}
+
+.footer{
+    width: 100%;
+    height: 200px;
+    background-color: black;
+}
