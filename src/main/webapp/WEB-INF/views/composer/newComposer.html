@@ -16,7 +16,7 @@
     </div>
     <div class="dateOfBirth">
         когда родился
-        <input type="date" th:field="*{dateOfBirth}">
+        <input type="text" th:field="*{dateOfBirth}">
     </div>
     <div class="birthPlace">
         где родился
@@ -36,6 +36,7 @@
     </div>
     <div class="photo">
         фотокарточка *pic (ПОКА НЕ РАБОТАЕТ)
+        <input type="file">
         <input value ="не трогать" type="text" th:field="*{photo}">
     </div>
     <div class="composerQuote">
@@ -44,6 +45,7 @@
     </div>
     <div class="autograph">
         автография*pic (ПОКА НЕ РАБОТАЕТ)
+        <input type="file">
         <input value ="не трогать" type="text" th:field="*{autograph}">
     </div>
     <div class="biography">
