@@ -34,6 +34,6 @@ public class ComposerController {
     @PostMapping()
     public String create(@ModelAttribute("composer") Composer composer){
         composerDAO.save(composer);
-        return "redirect:/composer/newComposer";
+        return "composer/newComposer";
     }
 }
