@@ -1,5 +1,6 @@
 let submitBtns = document.querySelectorAll('.submit') /*кнопки сохранения формы*/
-const map1 = new Map(); /*мап для хранения значений полей */
+let inputContainers = document.querySelectorAll('.inputContainer input')
+const map1 = new Map(); /*мап для хранения значений полей*/
 
 submitBtns.forEach(submitBtn => {
     submitBtn.addEventListener('click', () => {
@@ -13,11 +14,13 @@ submitBtns.forEach(submitBtn => {
         splits.forEach(split => {
             inputValues = split.querySelectorAll('input, textarea, select')
             mass = getValues(inputValues, btnType)
-            titleKeys = split.querySelectorAll('.menuTitle p, .lifeStepInputTitle p')
+            titleKeys = split.querySelectorAll('.menuTitle p')
             titleKeys.forEach(titleKey => {
                 inputTitleKey = titleKey
             })
             map1.set(inputTitleKey.innerHTML.trim(), mass)
+            pullValue(mass,inputTitleKey.innerHTML.trim())
+
         })
         console.log(map1)
     })
@@ -47,6 +50,7 @@ function getValues(inputValues, btnType) {
                         strInput += el.value + " "
                     }
                 }
+
                 let str = strInput.split("/")
                 if (index === array.length-1){
                     for (let i = 1; i < str.length; i++) {
@@ -59,7 +63,7 @@ function getValues(inputValues, btnType) {
                     if (el.querySelector('p')!== null && el.querySelector('p').tagName === 'P') {
                         mass.push((el.querySelector('p').innerHTML).trim())
                     } else {
-                        mass.push((strInput += el.value).trim())
+                        mass.push(el.value.trim() + " |")
                     }
                 }
                 break
@@ -86,3 +90,16 @@ function getValues(inputValues, btnType) {
     })
     return mass;
 }
+
+function pullValue(mass,key){
+    let str = ""
+    inputContainers.forEach(inputContainer => {
+        if(inputContainer.getAttribute('keyValue')===key){
+            for (let i = 0; i < mass.length; i++) {
+                str += mass[i] + "_"
+            }
+            inputContainer.value = str.trim()
+        }
+    })
+}
+

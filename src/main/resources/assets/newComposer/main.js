@@ -1,9 +1,13 @@
 let circleBtns = document.querySelectorAll('.cls-1')
 let bodySize = document.querySelector('body')
 let fog = document.querySelector('.fog')
+let pushButton = document.querySelector('.pushButton')
+let debugBtn = document.querySelector('.debugBtn')
+
 let currentSvgFrame
 let menu
 let inMenu
+let submitBtnss = document.querySelectorAll('.submit') /*кнопки сохранения формы*/
 let menuBtns = document.querySelectorAll('.menu li')
 let enterBtn = document.querySelector('.enterBtn')
 
@@ -89,3 +93,12 @@ enterBtn.addEventListener('click', ()=>{
 
 
 
+submitBtnss.forEach(submitBtn => {
+    submitBtn.addEventListener('click', ()=> {
+       disableFog()
+    })
+})
+
+pushButton.addEventListener('click', ()=> {
+    debugBtn.click()
+})

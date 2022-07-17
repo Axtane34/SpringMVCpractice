@@ -2,16 +2,19 @@ let addBioBtns = document.querySelectorAll('.addBioBtn')
 let lifeStepInputParent = document.querySelector('.bioRight')
 let childAges = document.querySelectorAll('.bioLeft li')
 let countAttr = 0
+let bioRight = document.querySelector('.bioRight')
+let splite = bioRight.querySelector('.splite')
 
 function addBioField(parent){
-    let lifeStep = document.createElement('div') //плашка, которую создает плюс   *1
+    let lifeStep = document.createElement('div') //плашка, которую создает плюс *1
     let lifeStepMiniInput = document.createElement('input') //инпут поля для плашки *1
     let lifeStepInput = document.createElement('div') //большой инпут
     let lifeStepInputTitle = document.createElement('div') //тайтел для большого интупа
     let lifeStepInputTitleP = document.createElement('p') //контейнер для текста заголовка большого инпута
     let lifeStepTextAria = document.createElement('textarea') //контейнер для текста заголовка большого инпута
-    let splite = document.createElement('div') //разделитель для логики мапа
-
+/*    let splite = document.createElement('div') //разделитель для логики мапа*/
+    let titleIndex = document.createElement('div')
+    let titleIndexP = document.createElement('p')
 //помещаем созданную плашку *1 в нужного родителя
     document.querySelector('.'+ parent.className).appendChild(lifeStep);
     lifeStep.classList.add('lifeStep')
@@ -22,9 +25,15 @@ function addBioField(parent){
     lifeStepMiniInput.setAttribute("placeholder", 'Назовите подраздел')
     lifeStepMiniInput.classList.add('lifeStepMiniInput')
 
+//сплит
 
-    lifeStepInputParent.appendChild(splite)
-    splite.classList.add('splite')
+
+//ключ для мапа
+    splite.appendChild(titleIndex)
+    titleIndex.appendChild(titleIndexP)
+    titleIndex.classList.add('menuTitle')
+    titleIndex.classList.add('invisible')
+    titleIndexP.innerHTML = 'биография'
 //большой интпут
     splite.appendChild(lifeStepInput)
     lifeStepInput.setAttribute("lifeStepAttr", countAttr)
@@ -71,9 +80,7 @@ function addBioField(parent){
 
 
 addBioBtns.forEach(addBioBtn => {
-    addBioBtn.addEventListener('click', (e)=>{
-
-        e.stopPropagation();
+    addBioBtn.addEventListener('click', (e)=>{e.stopPropagation();
         let parent = addBioBtn.parentElement.parentElement.parentElement
         addBioField(parent)
         childAges.forEach(childAge =>{
@@ -109,7 +116,5 @@ childAges.forEach(childAge =>{
             }
 
         })
-
-
     })
 })

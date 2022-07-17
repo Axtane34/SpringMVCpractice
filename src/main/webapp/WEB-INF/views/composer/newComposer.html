@@ -26,24 +26,73 @@
     <div class="content"> <!--контейнер 1226px-->
         <div class="debug">
 
-            <h4>ЖИЗНЬ | СМЕРТЬ</h4>
-            <div class="line"><p>дата рождения</p><p class="dateOfBirth">ответ</p></div>
-            <div class="line"><p>место рождения</p><p class="placeOfBirth">ответ</p></div>
-            <div class="line"><p>годы активности</p><p class="activity">ответ</p></div>
-            <div class="line"><p>дата и причина смерти</p><p class="dateOfDeath">ответ</p></div>
-            <div class="line"><p>место смерти</p><p class="placeOfDeath">ответ</p></div>
-            <div class="line"><p>похоронен</p><p class="buried">ответ</p></div>
-            <h4>ФАКТЫ | ЦИТАТЫ</h4>
-            <div class="line"><p>цитаты композитора</p><p class="composQuotes">ответ</p></div>
-            <div class="line"><p>положительные цитаты</p><p class="quotesAboutP">ответ</p></div>
-            <div class="line"><p>отрицательные цитаты</p><p class="quotesAboutN">ответ</p></div>
-            <div class="line"><p>интересные факты</p><p class="interestingFacts">ответ</p></div>
-            <div class="line"><p>заблуждения</p><p class="delusion">ответ</p></div>
-            <h4>ФИО | ЭПОХА</h4>
-            <div class="line"><p>фио</p><p class="fio">ответ</p></div>
-            <div class="line"><p>эпоха</p><p class="epoch">ответ</p></div>
-            <h4>БИОГРАФИЯ</h4>
-            <div class="line"><p>биография</p><p class="bio">ответ</p></div>
+            <form class="inputContainer" th:method="POST" th:action="@{/composer}" th:object="${composer}">
+                <div class="name">
+                    ФИО
+                    <input type="text" keyValue="фио" th:field="*{fio}">
+                </div>
+                <div class="username">
+                    юзернейм
+                    <input type="text" keyValue="имя пользователя" th:field="*{username}">
+                </div>
+                <div class="epoch">
+                    эпоха
+                    <input type="text" keyValue="эпоха" th:field="*{epoch}">
+                </div>
+                <div class="dateOfBirth">
+                    когда родился
+                    <input type="text" keyValue="дата рождения" th:field="*{dateOfBirth}">
+                </div>
+                <div class="birthPlace">
+                    где родился
+                    <input type="text" keyValue="место рождения" th:field="*{placeOfBirth}">
+                </div>
+                <div class="deathPlace">
+                    место смерти
+                    <input type="text" keyValue="место смерти" th:field="*{placeOfDeath}">
+                </div>
+                <div class="activityYears">
+                    годы активности
+                    <input type="text" keyValue="годы активности" th:field="*{yearsOfActivity}">
+                </div>
+                <div class="dateOfDeath">
+                    дата смерти
+                    <input type="text" keyValue="дата смерти" th:field="*{dateOfDeath}">
+                </div>
+                <div class="buried">
+                    место захоронения
+                    <input type="text" keyValue="похоронен" th:field="*{burialPlace}">
+                </div>
+                <div class="composerQuote">
+                    цитата
+                    <input type="text" keyValue="цитаты композитора" th:field="*{composerQuotes}">
+                </div>
+                <div class="positiveQuotes">
+                    положительные цитаты
+                    <input type="text" keyValue="положительные цитаты о композиторе" th:field="*{positiveQuotes}">
+                </div>
+                <div class="negativeQuotes">
+                    негативные цитаты
+                    <input type="text" keyValue="негативные цитаты о композиторе" th:field="*{negativeQuotes}">
+                </div>
+                <div class="biography">
+                    биография
+                    <input type="text" keyValue="биография" th:field="*{biography}">
+                </div>
+                <div class="deathReason">
+                    причина смерти
+                    <input type="text" keyValue="причина смерти" th:field="*{deathReason}">
+                </div>
+                <div class="facts">
+                    факты
+                    <input type="text" keyValue="интересные факты" th:field="*{interestingFacts}">
+                </div>
+                <div class="mistake">
+                    заблуждения
+                    <input type="text" keyValue="заблуждения" th:field="*{delusions}">
+                </div>
+                <input type="submit" class="debugBtn" value="ДОБАВИТЬ">
+            </form>
         </div>
         <div class="header">header</div>
         <div class="main">
@@ -52,9 +101,6 @@
                 <div class="left">
                     <div class="svgFrame" menuField = "lifeDeath">
                         <svg class="vector" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 221.11 218.86">
-                            <pattern id="image" patternUnits="userSpaceOnUse" height="200" width="200">
-                                <image x="0" y="0" height="200" width="200" xlink:href="img/default.png"></image>
-                            </pattern>
                             <path class="cls-2" d="M32,159.46a94.69,94.69,0,0,1-12.71-47.34C19.25,60.2,62,17.46,114,17.46a93.86,93.86,0,0,1,49.21,14"/>
                             <path class="cls-3" d="M84.34,215.46c-56-13.24-91.27-70.38-78.07-126.57"/>
                             <path class="cls-4" d="M130.32,5c54.09,7.58,92.39,58.45,84.83,112.71"/>
@@ -65,9 +111,6 @@
                     </div>
                     <div class="svgFrame" menuField = "factsQuotes">
                         <svg class="vector" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 221.11 218.86">
-                            <pattern id="image" patternUnits="userSpaceOnUse" height="200" width="200">
-                                <image x="0" y="0" height="200" width="200" xlink:href="img/default.png"></image>
-                            </pattern>
                             <path class="cls-2" d="M32,159.46a94.69,94.69,0,0,1-12.71-47.34C19.25,60.2,62,17.46,114,17.46a93.86,93.86,0,0,1,49.21,14"/>
                             <path class="cls-3" d="M84.34,215.46c-56-13.24-91.27-70.38-78.07-126.57"/>
                             <path class="cls-4" d="M130.32,5c54.09,7.58,92.39,58.45,84.83,112.71"/>
@@ -81,9 +124,6 @@
                 <div class="center">
                     <div class="svgFrame" menuField = "aboutFio">
                         <svg class="vector" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 221.11 218.86">
-                            <pattern id="image" patternUnits="userSpaceOnUse" height="200" width="200">
-                                <image x="0" y="0" height="200" width="200" xlink:href="img/default.png"></image>
-                            </pattern>
                             <path class="cls-2" d="M32,159.46a94.69,94.69,0,0,1-12.71-47.34C19.25,60.2,62,17.46,114,17.46a93.86,93.86,0,0,1,49.21,14"/>
                             <path class="cls-3" d="M84.34,215.46c-56-13.24-91.27-70.38-78.07-126.57"/>
                             <path class="cls-4" d="M130.32,5c54.09,7.58,92.39,58.45,84.83,112.71"/>
@@ -94,9 +134,6 @@
                     </div>
                     <div class="svgFrame" menuField = "photo">
                         <svg class="vector" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 221.11 218.86">
-                            <pattern id="image" patternUnits="userSpaceOnUse" height="200" width="200">
-                                <image x="0" y="0" height="200" width="200" xlink:href="img/default.png"></image>
-                            </pattern>
                             <path class="cls-2" d="M32,159.46a94.69,94.69,0,0,1-12.71-47.34C19.25,60.2,62,17.46,114,17.46a93.86,93.86,0,0,1,49.21,14"/>
                             <path class="cls-3" d="M84.34,215.46c-56-13.24-91.27-70.38-78.07-126.57"/>
                             <path class="cls-4" d="M130.32,5c54.09,7.58,92.39,58.45,84.83,112.71"/>
@@ -105,9 +142,6 @@
                     </div>
                     <div class="svgFrame" menuField = "etc">
                         <svg class="vector" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 221.11 218.86">
-                            <pattern id="image" patternUnits="userSpaceOnUse" height="200" width="200">
-                                <image x="0" y="0" height="200" width="200" xlink:href="img/default.png"></image>
-                            </pattern>
                             <path class="cls-2" d="M32,159.46a94.69,94.69,0,0,1-12.71-47.34C19.25,60.2,62,17.46,114,17.46a93.86,93.86,0,0,1,49.21,14"/>
                             <path class="cls-3" d="M84.34,215.46c-56-13.24-91.27-70.38-78.07-126.57"/>
                             <path class="cls-4" d="M130.32,5c54.09,7.58,92.39,58.45,84.83,112.71"/>
@@ -120,9 +154,6 @@
                 <div class="right">
                     <div class="svgFrame" menuField = "bio">
                         <svg class="vector" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 221.11 218.86">
-                            <pattern id="image" patternUnits="userSpaceOnUse" height="200" width="200">
-                                <image x="0" y="0" height="200" width="200" xlink:href="img/default.png"></image>
-                            </pattern>
                             <path class="cls-2" d="M32,159.46a94.69,94.69,0,0,1-12.71-47.34C19.25,60.2,62,17.46,114,17.46a93.86,93.86,0,0,1,49.21,14"/>
                             <path class="cls-3" d="M84.34,215.46c-56-13.24-91.27-70.38-78.07-126.57"/>
                             <path class="cls-4" d="M130.32,5c54.09,7.58,92.39,58.45,84.83,112.71"/>
@@ -133,9 +164,6 @@
                     </div>
                     <div class="svgFrame" menuField = "environment">
                         <svg class="vector" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 221.11 218.86">
-                            <pattern id="image" patternUnits="userSpaceOnUse" height="200" width="200">
-                                <image x="0" y="0" height="200" width="200" xlink:href="img/default.png"></image>
-                            </pattern>
                             <path class="cls-2" d="M32,159.46a94.69,94.69,0,0,1-12.71-47.34C19.25,60.2,62,17.46,114,17.46a93.86,93.86,0,0,1,49.21,14"/>
                             <path class="cls-3" d="M84.34,215.46c-56-13.24-91.27-70.38-78.07-126.57"/>
                             <path class="cls-4" d="M130.32,5c54.09,7.58,92.39,58.45,84.83,112.71"/>
@@ -147,7 +175,7 @@
                 </div>
             </div> <!--колонки с SVG-->
             <div class="navSaveBtns">
-                <div class="defaultBtn">
+                <div class="defaultBtn pushButton">
                     <p>опубликовать</p>
                 </div>
             </div>
@@ -332,7 +360,7 @@
 
                 <ul class="menuIn" menuInField = "composQuotes">
                     <div class="splite">
-                        <li class="menuAll menuTitle"><p>Цитаты композитора</p></li>
+                        <li class="menuAll menuTitle"><p>цитаты композитора</p></li>
                         <div class="quoteContainer">
                                 <textarea></textarea>
                         </div>
@@ -371,7 +399,7 @@
 
                 <ul class="menuIn" menuInField = "interestingFacts">
                     <div class="splite">
-                        <li class="menuAll menuTitle"><p>Интересные факты</p></li>
+                        <li class="menuAll menuTitle"><p>интересные факты</p></li>
                         <div class="quoteContainer">
                             <textarea></textarea>
                         </div>
@@ -384,7 +412,7 @@
 
                 <ul class="menuIn" menuInField = "delusion">
                     <div class="splite">
-                        <li class="menuAll menuTitle"><p>Заблуждения</p></li>
+                        <li class="menuAll menuTitle"><p>заблуждения</p></li>
                         <div class="quoteContainer">
                             <textarea></textarea>
                         </div>
@@ -422,7 +450,7 @@
 
                 <ul class="menuIn" menuInField = "fio">
                     <div class="splite">
-                        <li class="menuAll menuTitle"><p>ФИО</p></li>
+                        <li class="menuAll menuTitle"><p>фио</p></li>
                         <li class="miniTextFrame px8"><textarea placeholder="Фамилия"></textarea></li>
                         <li class="miniTextFrame px8"><textarea placeholder="Имя"></textarea></li>
                         <li class="miniTextFrame last"><textarea placeholder="Отчество"></textarea></li>
@@ -508,7 +536,9 @@
                     </div>
                 </div>
                 <div class="bioRight">
+                    <div class="splite">
 
+                    </div>
                 </div>
                 <div class="submit defaultBtn bioSave" btnType='bio'><p>сохранить</p></div>
             </ul>

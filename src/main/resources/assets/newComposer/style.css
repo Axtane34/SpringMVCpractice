@@ -134,3 +134,7 @@ body::-webkit-scrollbar { width: 0;  height: 0;}
 .footer{
     border-top: 1px dotted rgb(0, 0, 0);
 }
+
+.invisible{
+    display: none;
+}

@@ -23,9 +23,9 @@ public class ComposerDAO {
                 new BeanPropertyRowMapper<>(Composer.class));
     }
 
-    public Composer show(String name){
-        return jdbcTemplate.query("SELECT * FROM Composer WHERE name = ?",
-                        new Object[]{name}, new BeanPropertyRowMapper<>(Composer.class))
+    public Composer show(String fio){
+        return jdbcTemplate.query("SELECT * FROM Composer WHERE fio = ?",
+                        new Object[]{fio}, new BeanPropertyRowMapper<>(Composer.class))
                 .stream().findAny().orElse(null);
     }
 
@@ -36,26 +36,26 @@ public class ComposerDAO {
     }*/
 
     public void save(Composer composer){
-        jdbcTemplate.update("INSERT INTO Composer(name, epoch, dateOfBirth, birthPlace, activityYears, " +
-                        "dateOfDeath, burialPlace, photo, composerQuote, autograph," +
-                        "biography, environment, facts, mistake) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-                composer.getName(), composer.getEpoch(), composer.getDateOfBirth(), composer.getBirthPlace(),
-                composer.getActivityYears(), composer.getDateOfDeath(), composer.getBurialPlace(),
-                composer.getPhoto(), composer.getComposerQuote(), composer.getAutograph(),
-                composer.getBiography(), composer.getEnvironment(),
-                composer.getFacts(), composer.getMistake());
+        jdbcTemplate.update("INSERT INTO Composer(username, dateOfBirth, placeOfBirth, yearsOfActivity, dateOfDeath, " +
+                        "deathReason, placeOfDeath, burialPlace, composerQuotes, positiveQuotes," +
+                        "negativeQuotes, interestingFacts, delusions, fio, epoch, biography) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                composer.getUsername(), composer.getDateOfBirth(), composer.getPlaceOfBirth(), composer.getYearsOfActivity(),
+                composer.getDateOfDeath(), composer.getDeathReason(), composer.getPlaceOfDeath(),
+                composer.getBurialPlace(), composer.getComposerQuotes(), composer.getPositiveQuotes(),
+                composer.getNegativeQuotes(), composer.getInterestingFacts(),
+                composer.getDelusions(), composer.getFio(), composer.getEpoch(), composer.getBiography());
     }
 
     public void update(int id, Composer composer){
-        jdbcTemplate.update("UPDATE Composer SET name=?, epoch=?, dateOfBirth=?, birthPlace=?, activityYears=?, " +
-                        "dateOfDeath=?, burialPlace=?, photo=?, composerQuote=?, " +
-                        "autograph=?, biography=?, environment=?," +
-                        "facts=?, mistake=? WHERE id=?",
-                composer.getName(), composer.getEpoch(), composer.getDateOfBirth(), composer.getBirthPlace(),
-                composer.getActivityYears(), composer.getDateOfDeath(), composer.getBurialPlace(),
-                composer.getPhoto(), composer.getComposerQuote(), composer.getAutograph(),
-                composer.getBiography(), composer.getEnvironment(),
-                composer.getFacts(), composer.getMistake(), id);
+        jdbcTemplate.update("UPDATE Composer SET username=?, dateOfBirth=?, placeOfBirth=?, yearsOfActivity=?, dateOfDeath=?, " +
+                        "deathReason=?, placeOfDeath=?, burialPlace=?, composerQuotes=?, " +
+                        "positiveQuotes=?, negativeQuotes=?, interestingFacts=?," +
+                        "delusions=?, fio=?, epoch=?, biography=? WHERE id=?",
+                composer.getUsername(), composer.getDateOfBirth(), composer.getPlaceOfBirth(), composer.getYearsOfActivity(),
+                composer.getDateOfDeath(), composer.getDeathReason(), composer.getPlaceOfDeath(),
+                composer.getBurialPlace(), composer.getComposerQuotes(), composer.getPositiveQuotes(),
+                composer.getNegativeQuotes(), composer.getInterestingFacts(),
+                composer.getDelusions(), composer.getFio(), composer.getEpoch(), composer.getBiography(), id);
     }
 
     public void delete(int id){

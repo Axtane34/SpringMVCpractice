@@ -2,41 +2,45 @@ package ru.axtane.springMVC.models;
 
 public class Composer {
     private int id;
-    private String name;
-    private String epoch;
+    private String username;
     private String dateOfBirth;
-    private String birthPlace;
-    private String activityYears;
+    private String placeOfBirth;
+    private String yearsOfActivity;
     private String dateOfDeath;
+    private String deathReason;
+    private String placeOfDeath;
     private String burialPlace;
-    private String photo;
-    private String composerQuote;
-    private String autograph;
+    private String composerQuotes;
+    private String positiveQuotes;
+    private String negativeQuotes;
+    private String interestingFacts;
+    private String delusions;
+    private String fio;
+    private String epoch;
     private String biography;
-    private String environment;
-    private String facts;
-    private String mistake;
     //private boolean isModerated;
     //name, dateOfBirth, birthPlace, activityYears, dateOfDeath, burialPlace, photo, composerQuote, autograph, biography, environment, facts, mistake
     //getName(), getDateOfBirth(), getBirthPlace(), getActivityYears(), getDateOfDeath(), getBurialPlace(), getPhoto(), getComposerQuote(), getAutograph(), getBiography(), getEnvironment(), getFacts(), getMistake(), getIsModerated()
 
 
-    public Composer(int id, String name, String epoch, String dateOfBirth, String birthPlace, String activityYears, String dateOfDeath, String burialPlace, String photo, String composerQuote, String autograph, String biography, String environment, String facts, String mistake) {
+    public Composer(int id, String username, String dateOfBirth, String placeOfBirth, String yearsOfActivity, String dateOfDeath, String deathReason, String placeOfDeath, String burialPlace, String composerQuotes, String positiveQuotes, String negativeQuotes, String interestingFacts, String delusions, String fio, String epoch, String biography) {
         this.id = id;
-        this.name = name;
-        this.epoch = epoch;
+        this.username = username;
         this.dateOfBirth = dateOfBirth;
-        this.birthPlace = birthPlace;
-        this.activityYears = activityYears;
+        this.placeOfBirth = placeOfBirth;
+        this.yearsOfActivity = yearsOfActivity;
         this.dateOfDeath = dateOfDeath;
+        this.deathReason = deathReason;
+        this.placeOfDeath = placeOfDeath;
         this.burialPlace = burialPlace;
-        this.photo = photo;
-        this.composerQuote = composerQuote;
-        this.autograph = autograph;
+        this.composerQuotes = composerQuotes;
+        this.positiveQuotes = positiveQuotes;
+        this.negativeQuotes = negativeQuotes;
+        this.interestingFacts = interestingFacts;
+        this.delusions = delusions;
+        this.fio = fio;
+        this.epoch = epoch;
         this.biography = biography;
-        this.environment = environment;
-        this.facts = facts;
-        this.mistake = mistake;
     }
 
     public Composer(){}
@@ -49,12 +53,12 @@ public class Composer {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getDateOfBirth() {
@@ -65,20 +69,20 @@ public class Composer {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public String getBirthPlace() {
-        return birthPlace;
+    public String getPlaceOfBirth() {
+        return placeOfBirth;
     }
 
-    public void setBirthPlace(String birthPlace) {
-        this.birthPlace = birthPlace;
+    public void setPlaceOfBirth(String placeOfBirth) {
+        this.placeOfBirth = placeOfBirth;
     }
 
-    public String getActivityYears() {
-        return activityYears;
+    public String getYearsOfActivity() {
+        return yearsOfActivity;
     }
 
-    public void setActivityYears(String activityYears) {
-        this.activityYears = activityYears;
+    public void setYearsOfActivity(String yearsOfActivity) {
+        this.yearsOfActivity = yearsOfActivity;
     }
 
     public String getDateOfDeath() {
@@ -89,6 +93,22 @@ public class Composer {
         this.dateOfDeath = dateOfDeath;
     }
 
+    public String getDeathReason() {
+        return deathReason;
+    }
+
+    public void setDeathReason(String deathReason) {
+        this.deathReason = deathReason;
+    }
+
+    public String getPlaceOfDeath() {
+        return placeOfDeath;
+    }
+
+    public void setPlaceOfDeath(String placeOfDeath) {
+        this.placeOfDeath = placeOfDeath;
+    }
+
     public String getBurialPlace() {
         return burialPlace;
     }
@@ -97,60 +117,52 @@ public class Composer {
         this.burialPlace = burialPlace;
     }
 
-    public String getPhoto() {
-        return photo;
+    public String getComposerQuotes() {
+        return composerQuotes;
     }
 
-    public void setPhoto(String photo) {
-        this.photo = photo;
+    public void setComposerQuotes(String composerQuotes) {
+        this.composerQuotes = composerQuotes;
     }
 
-    public String getComposerQuote() {
-        return composerQuote;
+    public String getPositiveQuotes() {
+        return positiveQuotes;
     }
 
-    public void setComposerQuote(String composerQuote) {
-        this.composerQuote = composerQuote;
+    public void setPositiveQuotes(String positiveQuotes) {
+        this.positiveQuotes = positiveQuotes;
     }
 
-    public String getAutograph() {
-        return autograph;
+    public String getNegativeQuotes() {
+        return negativeQuotes;
     }
 
-    public void setAutograph(String autograph) {
-        this.autograph = autograph;
+    public void setNegativeQuotes(String negativeQuotes) {
+        this.negativeQuotes = negativeQuotes;
     }
 
-    public String getBiography() {
-        return biography;
+    public String getInterestingFacts() {
+        return interestingFacts;
     }
 
-    public void setBiography(String biography) {
-        this.biography = biography;
+    public void setInterestingFacts(String interestingFacts) {
+        this.interestingFacts = interestingFacts;
     }
 
-    public String getEnvironment() {
-        return environment;
+    public String getDelusions() {
+        return delusions;
     }
 
-    public void setEnvironment(String environment) {
-        this.environment = environment;
+    public void setDelusions(String delusions) {
+        this.delusions = delusions;
     }
 
-    public String getFacts() {
-        return facts;
+    public String getFio() {
+        return fio;
     }
 
-    public void setFacts(String facts) {
-        this.facts = facts;
-    }
-
-    public String getMistake() {
-        return mistake;
-    }
-
-    public void setMistake(String mistake) {
-        this.mistake = mistake;
+    public void setFio(String fio) {
+        this.fio = fio;
     }
 
     public String getEpoch() {
@@ -161,12 +173,12 @@ public class Composer {
         this.epoch = epoch;
     }
 
-    /* public boolean isModerated() {
-        return isModerated;
+    public String getBiography() {
+        return biography;
     }
 
-    public void setModerated(boolean moderated) {
-        isModerated = moderated;
-    }*/
+    public void setBiography(String biography) {
+        this.biography = biography;
+    }
 }
 
