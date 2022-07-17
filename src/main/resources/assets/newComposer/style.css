@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 /*основные стили страницы добавления нового композитора*/
 /*=====================================================*/
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
 p, textarea, input{
     font-family: 'Raleway', sans-serif;
     text-transform: uppercase;
@@ -36,7 +37,7 @@ body::-webkit-scrollbar { width: 0;  height: 0;}
     position: absolute; top: 0; right: 0;
     width: 50%;
     height: 1000px;
-    background-image: url("img/bg2.jpg  ");
+    background-image: url("img/bg2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;

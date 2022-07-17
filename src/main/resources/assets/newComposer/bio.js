@@ -4,7 +4,7 @@ let childAges = document.querySelectorAll('.bioLeft li')
 let countAttr = 0
 
 function addBioField(parent){
-    let lifeStep = document.createElement('div') //плашка, которую создает плюс *1
+    let lifeStep = document.createElement('div') //плашка, которую создает плюс   *1
     let lifeStepMiniInput = document.createElement('input') //инпут поля для плашки *1
     let lifeStepInput = document.createElement('div') //большой инпут
     let lifeStepInputTitle = document.createElement('div') //тайтел для большого интупа

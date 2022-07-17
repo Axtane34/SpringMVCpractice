@@ -13,7 +13,7 @@ circleBtns.forEach(circleBtn => {
         menu = document.querySelector('.menu[menuField="' + currentSvgFrame.getAttribute('menuField') + '"]')
         menu.style.display = "block"
     })
-}) // событие клика по кружку
+}) // событие клика по кружку e
 
 
 /*=================*FOG*====================*/

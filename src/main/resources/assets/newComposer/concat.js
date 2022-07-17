@@ -1,5 +1,5 @@
 let submitBtns = document.querySelectorAll('.submit') /*кнопки сохранения формы*/
-const map1 = new Map(); /*мап для хранения значений полей*/
+const map1 = new Map(); /*мап для хранения значений полей */
 
 submitBtns.forEach(submitBtn => {
     submitBtn.addEventListener('click', () => {

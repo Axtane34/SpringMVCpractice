@@ -5,7 +5,7 @@ let body = document.querySelector('body')
 quotesBtns.forEach(quotesBtn =>{
     quotesBtn.addEventListener('click', ()=>{
         let split = quotesBtn.parentElement.parentElement
-        let quoteContainer = split.querySelector('.quoteContainer') //контейнер со скролом цитат фремов
+        let quoteContainer = split.querySelector('.quoteContainer') //контейнер со скролом цитат фремовd
         //создание
         let quoteContainerTextArea = document.createElement('textarea') //создание поля для ввода цитат
         quoteContainer.appendChild(quoteContainerTextArea); //помещение в родителя
