@@ -9,7 +9,7 @@ import ru.axtane.springMVC.models.Composer;
 
 
 @Controller
-/*@RequestMapping("/composer")*/
+@RequestMapping("/composer")
 public class ComposerController {
     private final ComposerDAO composerDAO;
 
@@ -25,7 +25,7 @@ public class ComposerController {
         return "composer/aboutComposer";
     }
 
-    @GetMapping()
+    @GetMapping("/newComposer")
     public String newComposer(@ModelAttribute("composer") Composer composer){
         return "composer/newComposer";
     }
