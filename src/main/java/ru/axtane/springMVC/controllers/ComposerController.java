@@ -25,15 +25,14 @@ public class ComposerController {
         return "composer/aboutComposer";
     }
 
-    @GetMapping("/newComposer")
+    @GetMapping()
     public String newComposer(@ModelAttribute("composer") Composer composer){
         return "composer/newComposer";
     }
 
     @PostMapping()
-    public String create(@ModelAttribute("composer") Composer composer, String name){
+    public String create(@ModelAttribute("composer") Composer composer){
         composerDAO.save(composer);
-        name = composer.getFio();
-        return "redirect:/" + name;
+        return "composer/aboutComposer";
     }
 }
