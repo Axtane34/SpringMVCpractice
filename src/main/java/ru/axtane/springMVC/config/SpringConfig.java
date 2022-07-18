@@ -18,6 +18,8 @@ import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
 import javax.sql.DataSource;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Objects;
 
 @Configuration
@@ -68,7 +70,7 @@ public class SpringConfig implements WebMvcConfigurer {
         }
     }
 
-    @Bean
+   /* @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(Objects.requireNonNull(environment.getProperty("driver")));
@@ -76,10 +78,30 @@ public class SpringConfig implements WebMvcConfigurer {
         dataSource.setUsername(environment.getProperty("user_name"));
         dataSource.setPassword(environment.getProperty("pass_word"));
         return dataSource;
+
+    }*/
+
+    @Bean
+    public DataSource dataSource() throws URISyntaxException {
+        URI dbUri = new URI(System.getenv("DATABASE_URL"));
+
+        String username = dbUri.getUserInfo().split(":")[0];
+        String password = dbUri.getUserInfo().split(":")[1];
+        String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath() + "?sslmode=require";
+
+        DriverManagerDataSource basicDataSource = new DriverManagerDataSource();
+        basicDataSource.setUrl(dbUrl);
+        basicDataSource.setUsername(username);
+        basicDataSource.setPassword(password);
+
+        return basicDataSource;
     }
 
     @Bean
-    public JdbcTemplate jdbcTemplate() {
+    public JdbcTemplate jdbcTemplate() throws URISyntaxException {
         return new JdbcTemplate(dataSource());
     }
+
+
+
 }

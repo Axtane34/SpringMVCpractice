@@ -1,0 +1,16 @@
+ru\axtane\springMVC\util\ComposerValidator.class
+ru\axtane\springMVC\config\SpringConfig.class
+ru\axtane\springMVC\dao\ComposerDAO.class
+ru\axtane\springMVC\controllers\ComposerController.class
+ru\axtane\springMVC\dao\PersonDAO$1.class
+ru\axtane\springMVC\util\PersonValidator.class
+ru\axtane\springMVC\controllers\BatchController.class
+ru\axtane\springMVC\controllers\PeopleController.class
+ru\axtane\springMVC\models\Person.class
+ru\axtane\springMVC\config\SpringMVCDispatcherServletInitializer.class
+ru\axtane\springMVC\models\Composer.class
+ru\axtane\springMVC\controllers\SecondController.class
+ru\axtane\springMVC\controllers\FirstController.class
+ru\axtane\springMVC\dao\PersonDAO.class
+ru\axtane\springMVC\controllers\AdminController.class
+ru\axtane\springMVC\dao\PersonMapper.class
