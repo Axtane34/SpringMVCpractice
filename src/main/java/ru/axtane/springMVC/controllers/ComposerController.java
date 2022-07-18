@@ -9,7 +9,7 @@ import ru.axtane.springMVC.models.Composer;
 
 
 @Controller
-@RequestMapping("/composer")
+/*@RequestMapping("/composer")*/
 public class ComposerController {
     private final ComposerDAO composerDAO;
 
@@ -31,8 +31,9 @@ public class ComposerController {
     }
 
     @PostMapping()
-    public String create(@ModelAttribute("composer") Composer composer){
+    public String create(@ModelAttribute("composer") Composer composer, String name){
         composerDAO.save(composer);
-        return "composer/newComposer";
+        name = composer.getFio();
+        return "redirect:/" + name;
     }
 }
