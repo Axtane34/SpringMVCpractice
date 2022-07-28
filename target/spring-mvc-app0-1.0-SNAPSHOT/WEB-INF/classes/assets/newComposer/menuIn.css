@@ -145,7 +145,7 @@ textarea{
 
 .quoteContainer textarea{
     padding: 27px;
-    line-height: 12px;
+    line-height: 18px;
     height: 168px;
 }
 
@@ -181,3 +181,6 @@ textarea{
     margin-bottom: 55px;
 } /*стиль для последнего элемента*/
 
+::placeholder {
+    font-size: 16px;
+}

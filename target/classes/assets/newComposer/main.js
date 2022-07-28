@@ -19,6 +19,53 @@ circleBtns.forEach(circleBtn => {
     })
 }) // событие клика по кружку e
 
+/*=============ЗАПРЕТИТЬ TAB================*/
+let picks = document.querySelectorAll('.pick')
+picks.forEach(pick =>{
+    pick.addEventListener('keydown', function (e) {
+        if (e.which === 9) {
+            e.preventDefault();
+        }
+    });
+})
+
+/*=============МАСКА ВВОДА===============*/
+document.addEventListener('DOMContentLoaded', () => {
+
+    const mask = (dataValue, options) => { // создаем универсальную функцию
+        const elements = document.querySelectorAll(`[data-mask="${dataValue}"]`) // ищем поля ввода по селектору с переданным значением data-атрибута
+        if (!elements) return // если таких полей ввода нет, прерываем функцию
+
+        elements.forEach(el => { // для каждого из полей ввода
+            IMask(el, options) // инициализируем плагин imask для необходимых полей ввода с переданными параметрами маски
+        })
+    }
+
+    // Используем наше функцию mask для разных типов масок
+
+    // Маска для номера телефона
+    mask('phone', {
+        mask: '+{7}(000)000-00-00'
+    })
+
+    // Маска для почтового индекса
+    mask('postalCode', {
+        mask: '000000' // шесть цифр
+    })
+
+    // Маска для даты
+    mask('date', {
+        mask: Date,
+        min: new Date(1000, 0, 1), // минимальная дата 01.01.1000
+    })
+
+    // Маска для числа
+    mask('number', {
+        mask: Number,
+        thousandsSeparator: ' ' // разделитель тысяч в числе
+    })
+
+})
 
 /*=================*FOG*====================*/
 function enableFog(circleBtn) {
@@ -65,7 +112,7 @@ function checkerNew(inMenu) {
             let nods = splite.querySelectorAll('.pick')
             let currentInputs = pick.querySelectorAll('input,textarea')
             currentInputs.forEach((currentInput, index) => {
-                if ((currentInput.value !== "" && currentInput.type === "number") || (currentInput.value !== "" && currentInput.type === "textarea") || currentInput.checked) {
+                if ((currentInput.value !== "" && (currentInput.type === "number" || currentInput.type === "text")) || (currentInput.value !== "" && currentInput.type === "textarea") || currentInput.checked) {
                     nods.forEach(nod => {
                         nod.style.pointerEvents = 'none'
                     })

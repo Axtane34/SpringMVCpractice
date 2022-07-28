@@ -224,7 +224,7 @@
                 <ul class="menuIn" menuInField = "dateOfBirth"> <!--2 уровень-->
                     <div class="splite">
                         <li class="menuAll menuTitle"><p>дата рождения</p></li>
-                        <li class="menuAll pick"><p>точная дата</p><input type="number"></li> <!--СТИЛЬ КАЛЕНДАРЯ-->
+                        <li class="menuAll pick"><p>точная дата</p><input type="text" placeholder="dd.mm.yyyy" data-mask="date"></li> <!--СТИЛЬ КАЛЕНДАРЯ-->
                         <li class="menuAll pick"><p>между</p><input type="number"><p>и</p><input type="number"></li> <!--СТИЛЬ МЕЖДУ-->
                         <li class="menuAll menuAround pick"><p>около</p><input type="number"></li>
                         <li class="menuAll menuAutofill last pick"><p>неизвестно</p><input type="checkbox"></li>
@@ -272,7 +272,7 @@
                 <ul class="menuIn" menuInField = "dateOfDeath">
                     <div class="splite">
                         <li class="menuAll menuTitle"><p>дата смерти</p></li>
-                        <li class="menuAll pick"><p>точная дата</p><input type="number"></li>
+                        <li class="menuAll pick"><p>точная дата</p><input type="text" placeholder="dd.mm.yyyy" data-mask="date"></li> <!--СТИЛЬ КАЛЕНДАРЯ-->
                         <li class="menuAll pick"><p>между</p><input type="number"><p>и</p><input type="number"></li>
                         <li class="menuAll menuAround pick"><p>около</p><input type="number"></li>
                         <li class="menuAll menuAutofill pick"><p>неизвестно</p><input type="checkbox"></li>
@@ -595,5 +595,6 @@
 <script th:src="@{/assets/newComposer/bio.js}"></script>
 <script th:src="@{/assets/newComposer/debug.js}"></script>
 <script th:src="@{/assets/newComposer/concat.js}"></script>
+<script th:src="@{/assets/newComposer/imask.js}"></script>
 </body>
 </html>
